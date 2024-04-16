@@ -13,7 +13,9 @@
   "license": "MIT",
   "dependencies": {
     "discord.js": "^14.14.1",
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.4.5",
+    "wretch": "^2.8.1",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "eslint": "^8.57.0",
