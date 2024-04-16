@@ -163,7 +163,7 @@ Processing [${user.username}](${userProfilePhoto})... ${
 
   await message.channel.send({
     content: `<@${user.id}> run through [${glif.name}](${glif.url})`,
-    files: [imageUrl],
+    files: [imageUrl], // FIXME
     // embeds: [generatedImageEmbed],
   });
 }
