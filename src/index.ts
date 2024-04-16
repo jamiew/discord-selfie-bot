@@ -37,7 +37,7 @@ client.on("ready", () => {
 
 client.on("messageCreate", async (message: Message) => {
   if (message.author.bot) {
-    console.debug("ignoring bot user (possibly self)");
+    // console.debug("ignoring bot user (possibly self)");
     return;
   }
 
@@ -100,6 +100,7 @@ async function processMessage(
   }
 
   const glif = await glifOfTheDay();
+  // console.log("processMessage glif =>", glif);
 
   // discord seems to be largely capped around 358x358
   const userProfilePhoto = user.displayAvatarURL({ size: 1024 });
@@ -128,7 +129,7 @@ Processing [${user.username}](${userProfilePhoto})... ${
 
   let imageUrl;
   try {
-    imageUrl = await runGlif(user.username, userProfilePhoto);
+    imageUrl = await runGlif(glif.id, user.username, userProfilePhoto);
   } catch (e) {
     console.error("runGlif error", e);
     await processingMessage.edit("Error processing image, sorry :(");

@@ -13,13 +13,11 @@ export const glifRunSchema = z.object({
 });
 export type GlifRunSchema = z.infer<typeof glifRunSchema>;
 
-export const runGlif = async (username: string, profilePhoto: string) => {
+export const runGlif = async (id: string, username: string, profilePhoto: string) => {
   if (!process.env.GLIF_API_TOKEN) throw new Error("missing GLIF_API_TOKEN");
 
-  const glifId = (await glifOfTheDay()).id;
-
   const body = {
-    id: glifId,
+    id,
     inputs: [profilePhoto],
   };
 
