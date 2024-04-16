@@ -13,7 +13,11 @@ import {
 
 dotenv.config();
 
-const { DISCORD_TOKEN, DISCORD_CLIENT_ID } = process.env;
+const { DISCORD_BOT_TOKEN, DISCORD_APPLICATION_ID } = process.env;
+
+if (!DISCORD_BOT_TOKEN || !DISCORD_APPLICATION_ID) {
+  throw new Error("missing required ENV vars");
+}
 
 const IMAGE_FILE = "path/to/image.png";
 
@@ -22,8 +26,6 @@ async function runGlif(
   username: string,
   userProfilePhoto: string
 ): Promise<string> {
-  // Implement your image generation logic here
-  // and return the path to the generated image
   return "path/to/generated/image.png";
 }
 
@@ -50,9 +52,12 @@ client.on("ready", () => {
 });
 
 client.on("messageCreate", async (message: Message) => {
-  if (message.author.bot) return;
+  if (message.author.bot) {
+    console.debug("ignoring bot user (possibly self)");
+    return;
+  }
 
-  if (message.content === "!postimage") {
+  if (message.content === "!image") {
     const imageEmbed = new EmbedBuilder()
       .setImage("attachment://image.png")
       .setTimestamp();
@@ -92,4 +97,4 @@ client.on("messageReactionAdd", async (reaction, user) => {
   }
 });
 
-client.login(DISCORD_TOKEN);
+client.login(DISCORD_BOT_TOKEN);
