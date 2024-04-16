@@ -1,13 +1,13 @@
-yet another gliffy discord bot
+# glif-selfie-bot
 
-template install command - use your own `client_id=`:
-
-<https://discord.com/api/oauth2/authorize?client_id=123456789012345678&permissions=0&scope=bot%20applications.commands>
+Yet another fun gliftastic bot
 
 requires
 
 - nodejs 18
 - [pnpm](https://pnpm.io/)
+- discord API token (free)
+- glif API token (free)
 
 ## Setup/Bot Registration
 
