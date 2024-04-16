@@ -55,8 +55,6 @@ client.on("messageCreate", async (message: Message) => {
     return;
   }
 
-  console.log(message);
-
   const data = {
     content: message.content,
     channel: {
@@ -98,6 +96,9 @@ client.on("messageCreate", async (message: Message) => {
 - !selfie
 - !glifs
 - !help`);
+  }
+  else {
+    console.debug("ignoring message");
   }
 });
 
