@@ -3,12 +3,7 @@ import {
   Client,
   GatewayIntentBits,
   Message,
-  EmbedBuilder,
-  MessageReaction,
   User,
-  CommandInteraction,
-  SlashCommandBuilder,
-  PartialMessageReaction,
   TextChannel,
   PartialUser,
   PartialMessage,
@@ -40,18 +35,40 @@ client.on("ready", () => {
   console.log(`Logged in as ${client.user?.tag}!`);
 });
 
-// TODO need to register slash commands
-// export const data = new SlashCommandBuilder()
-//   .setName("ping")
-//   .setDescription("Replies with Pong!");
-//
-// export async function execute(interaction: CommandInteraction) {
-//   return interaction.reply("Pong!");
-// }
-
 client.on("messageCreate", async (message: Message) => {
   if (message.author.bot) {
     console.debug("ignoring bot user (possibly self)");
+    return;
+  }
+
+  if (message.content === "!selfie") {
+    processMessage(message, message.author);
+  } else if (message.content === "!glifs") {
+    await message.channel.send(
+      "Available selfie glifs:\n" +
+        glifs.map((glif) => `- [${glif.name}](${glif.url})`).join("\n")
+    );
+  } else if (message.content == "!help") {
+    await message.channel.send(`Commands:
+- !selfie
+- !glifs
+- !help`);
+  } else {
+    // debugMessage();
+    // console.debug("ignoring message");
+  }
+});
+
+client.on("messageReactionAdd", async (reaction, user) => {
+  if (user.bot) return;
+  if (reaction.emoji.name === "🖼️") {
+    processMessage(reaction.message, user);
+  }
+});
+
+function debugMessage(message: Message | PartialMessage) {
+  if (!message?.author) {
+    console.debug("message.author is blank, it's partial, aborting for now");
     return;
   }
 
@@ -69,45 +86,8 @@ client.on("messageCreate", async (message: Message) => {
       avatar: message.author.displayAvatarURL(),
     },
   };
-  console.log("messageCreate", data);
-
-  // if (message.content === "!image") {
-  //   const imageEmbed = new EmbedBuilder()
-  //     .setImage("attachment://image.png")
-  //     .setTimestamp();
-
-  //   const sentMessage = await message.channel.send({
-  //     embeds: [imageEmbed],
-  //     files: [IMAGE_FILE],
-  //   });
-
-  //   await sentMessage.react("🖼️");
-  // }
-
-  if (message.content === "!selfie") {
-    processMessage(message, message.author);
-  } else if (message.content === "!glifs") {
-    await message.channel.send(
-      "Available selfie glifs:\n" +
-        glifs.map((glif) => `- [${glif.name}](${glif.url})`).join("\n")
-    );
-  } else if (message.content == "!help") {
-    await message.channel.send(`Commands:
-- !selfie
-- !glifs
-- !help`);
-  }
-  else {
-    console.debug("ignoring message");
-  }
-});
-
-client.on("messageReactionAdd", async (reaction, user) => {
-  if (user.bot) return;
-  if (reaction.emoji.name === "🖼️") {
-    processMessage(reaction.message, user);
-  }
-});
+  console.debug("debugMessage", data);
+}
 
 async function processMessage(
   message: Message | PartialMessage,
