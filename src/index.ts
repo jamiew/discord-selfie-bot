@@ -68,7 +68,9 @@ client.on("messageReactionAdd", async (reaction, user) => {
 
 function debugMessage(message: Message | PartialMessage) {
   if (!message?.author) {
-    console.warn("debugMessage: message.author is blank, it's partial, aborting for now");
+    console.warn(
+      "debugMessage: message.author is blank, it's partial, aborting for now"
+    );
     return;
   }
 
@@ -84,7 +86,7 @@ function debugMessage(message: Message | PartialMessage) {
       displayName: message.author.displayName,
       globalName: message.author.globalName,
       avatarRaw: message.author.displayAvatarURL(),
-      avatar: message.author.displayAvatarURL({ extension: 'png', size: 1024 }),
+      avatar: message.author.displayAvatarURL({ extension: "png", size: 1024 }),
     },
   };
   console.debug("debugMessage", data);
@@ -104,7 +106,21 @@ async function processMessage(
   // console.log("processMessage glif =>", glif);
 
   // discord seems to be largely capped around 358x358
-  const userProfilePhoto = user.displayAvatarURL({ extension: 'png', size: 1024 });
+  console.log("displayAvatarURL debugging", {
+    user: user.username,
+    avatar: user.displayAvatarURL(),
+    avatarPng: user.displayAvatarURL({ extension: "png" }),
+    avatarJpg: user.displayAvatarURL({ extension: "jpg", forceStatic: true }),
+    avatarPngStatic: user.displayAvatarURL({ extension: "png" }),
+    avatarJpgStatic: user.displayAvatarURL({
+      extension: "jpg",
+      forceStatic: true,
+    }),
+  });
+  const userProfilePhoto = user.displayAvatarURL({
+    extension: "png",
+    size: 1024,
+  });
 
   const addonMessages = [
     "you look nice today btw",
