@@ -8,7 +8,7 @@ export const glifRunSchema = z.object({
   id: z.string(),
   inputs: z.record(z.string()).optional(),
   output: z.string().nullable(),
-  outputFull: z.any().optional(),
+  // outputFull: z.any().optional(),
   error: z.string().optional(),
 });
 export type GlifRunSchema = z.infer<typeof glifRunSchema>;
@@ -26,7 +26,7 @@ export const runGlif = async (id: string, username: string, profilePhoto: string
     .auth(`Bearer ${process.env.GLIF_API_TOKEN}`)
     .post(body)
     .json();
-  console.log("runGlif raw res =>", res);
+  // console.log("runGlif raw res =>", res);
 
   const json = glifRunSchema.parse(res);
   console.log("runGlif zod json =>", json);

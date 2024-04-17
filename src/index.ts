@@ -68,7 +68,7 @@ client.on("messageReactionAdd", async (reaction, user) => {
 
 function debugMessage(message: Message | PartialMessage) {
   if (!message?.author) {
-    console.debug("message.author is blank, it's partial, aborting for now");
+    console.warn("debugMessage: message.author is blank, it's partial, aborting for now");
     return;
   }
 
@@ -95,7 +95,7 @@ async function processMessage(
 ) {
   // abort if partial (for now)
   if (!user?.username) {
-    console.log("processMessage: missing data, skipping", { message, user });
+    console.warn("processMessage: missing data, skipping", { message, user });
     return;
   }
 
