@@ -67,10 +67,10 @@ const glifUrls = [
     "Face Redesigner (tiger)",
     "https://glif.app/@fab1an/glifs/clm7pfbo60002jt0fjldvivrp",
   ],*/
-  [
+  /*[
     "Impression Selfie",
     "https://glif.app/@fab1an/glifs/clptup7q100051031mjolo8kb",
-  ],
+  ],*/
   [
     "80s Fantasy Figure of Yourself",
     "https://glif.app/@fab1an/glifs/clqnsn20x0030qbm790rm3kc4",
