@@ -83,7 +83,8 @@ function debugMessage(message: Message | PartialMessage) {
       username: message.author.username,
       displayName: message.author.displayName,
       globalName: message.author.globalName,
-      avatar: message.author.displayAvatarURL(),
+      avatarRaw: message.author.displayAvatarURL(),
+      avatar: message.author.displayAvatarURL({ extension: 'png', size: 1024 }),
     },
   };
   console.debug("debugMessage", data);
@@ -103,7 +104,7 @@ async function processMessage(
   // console.log("processMessage glif =>", glif);
 
   // discord seems to be largely capped around 358x358
-  const userProfilePhoto = user.displayAvatarURL({ size: 1024 });
+  const userProfilePhoto = user.displayAvatarURL({ extension: 'png', size: 1024 });
 
   const addonMessages = [
     "you look nice today btw",
