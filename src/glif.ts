@@ -63,10 +63,10 @@ const glifUrls = [
     "RoastGPT: Roast Your Selfie",
     "https://glif.app/@fab1an/glifs/clo5gzr31000kmj0f2xeqjb25",
   ],
-  [
+  /*[
     "Face Redesigner (tiger)",
     "https://glif.app/@fab1an/glifs/clm7pfbo60002jt0fjldvivrp",
-  ],
+  ],*/
   [
     "Impression Selfie",
     "https://glif.app/@fab1an/glifs/clptup7q100051031mjolo8kb",
