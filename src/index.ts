@@ -135,9 +135,9 @@ async function processMessage(
   const addonMessage =
     addonMessages[Math.floor(Math.random() * addonMessages.length)];
 
-  const processingMessage = await message.channel.send(`Today's glif: [${
+  const processingMessage = await message.channel.send(`Let's try using [${
     glif.name
-  }](${glif.url}) by [@${glif.username}](<${glif.userUrl}>)
+  }](<${glif.url}>) by [@${glif.username}](<${glif.userUrl}>)
 Processing [${user.username}](${userProfilePhoto})... ${
     addonMessage ? `${addonMessage}...` : ""
   }`);
