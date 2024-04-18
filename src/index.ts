@@ -46,7 +46,7 @@ client.on("messageCreate", async (message: Message) => {
   } else if (message.content === "!glifs") {
     await message.channel.send(
       "Available selfie glifs:\n" +
-        glifs.map((glif) => `- [${glif.name}](${glif.url})`).join("\n")
+        glifs.map((glif) => `- [${glif.name}](<${glif.url}>)`).join("\n")
     );
   } else if (message.content == "!help") {
     await message.channel.send(`Commands:
@@ -107,6 +107,14 @@ async function processMessage(
 
   // discord seems to be largely capped around 358x358
   // converting to jpg since some people have gif avatars that break glif, and discord won't convert gif to png
+  console.log("displayAvatarURL debugging", {
+    user: user.username,
+    avatar: user.displayAvatarURL(),
+    avatarPng: user.displayAvatarURL({ extension: "png" }),
+    avatarJpg: user.displayAvatarURL({ extension: "jpg" }),
+    avatarWebp: user.displayAvatarURL({ extension: "webp" }),
+    avatarGif: user.displayAvatarURL({ extension: "gif" }),
+  });
   const userProfilePhoto = user.displayAvatarURL({
     extension: "jpg",
     size: 1024,
@@ -150,7 +158,7 @@ Processing [${user.username}](${userProfilePhoto})... ${
   //   .setTimestamp();
 
   await message.channel.send({
-    content: `<@${user.id}> run through [${glif.name}](${glif.url})`,
+    content: `<@${user.id}> run through [${glif.name}](<${glif.url}>)`,
     // embeds: [generatedImageEmbed],
     // @ts-ignore FIXME this works, but tsc doesn't like it
     files: [imageUrl],
