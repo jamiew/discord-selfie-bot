@@ -8,7 +8,7 @@ export const glifRunSchema = z.object({
   id: z.string(),
   inputs: z.record(z.string()).optional(),
   output: z.string().nullable(),
-  // outputFull: z.any().optional(),
+  outputFull: z.any().optional(),
   error: z.string().optional(),
 });
 export type GlifRunSchema = z.infer<typeof glifRunSchema>;

@@ -137,7 +137,7 @@ async function processMessage(
 
   const processingMessage = await message.channel.send(`Today's glif: [${
     glif.name
-  }](${glif.url}) by [@${glif.username}](${glif.userUrl})
+  }](${glif.url}) by [@${glif.username}](<${glif.userUrl}>)
 Processing [${user.username}](${userProfilePhoto})... ${
     addonMessage ? `${addonMessage}...` : ""
   }`);
