@@ -111,6 +111,9 @@ async function processMessage(
     user: user.username,
     avatar: user.displayAvatarURL(),
     avatarPng: user.displayAvatarURL({ extension: "png" }),
+    avatarPng2: user.displayAvatarURL({ extension: "png", format: "png", }),
+    avatarPng3: user.displayAvatarURL({ extension: "png", format: "png", size: "512", }),
+    avatarPng4: user.displayAvatarURL({ extension: "png", format: "png", dynamic: false, static: true }),
     avatarJpg: user.displayAvatarURL({ extension: "jpg" }),
     avatarWebp: user.displayAvatarURL({ extension: "webp" }),
     avatarGif: user.displayAvatarURL({ extension: "gif" }),
@@ -122,13 +125,12 @@ async function processMessage(
 
   const addonMessages = [
     "you look nice today btw",
-    "did you get a haircut?",
-    "i like your style",
-    "so cute",
-    "reticulating splines (lol)",
-    "nice photo you got there",
+    "did you get a haircut? looks great",
+    "so cute <3",
+    "reticulating splines lol",
+    "nice photo you've got there",
     "doo doo dee doo",
-    "this will take a sec",
+    "*taps foot impatiently*",
     "this won't take long",
     "omg look out behind you! just kidding",
   ];
