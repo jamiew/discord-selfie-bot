@@ -112,8 +112,8 @@ async function processMessage(
     avatar: user.displayAvatarURL(),
     avatarPng: user.displayAvatarURL({ extension: "png" }),
     avatarPng2: user.displayAvatarURL({ extension: "png", format: "png", }),
-    avatarPng3: user.displayAvatarURL({ extension: "png", format: "png", size: "512", }),
-    avatarPng4: user.displayAvatarURL({ extension: "png", format: "png", dynamic: false, static: true }),
+    avatarPng3: user.displayAvatarURL({ extension: "png", format: "png", size: 512, }),
+    avatarPng4: user.displayAvatarURL({ extension: "png", format: "png", size: 512, dynamic: false, static: true }),
     avatarJpg: user.displayAvatarURL({ extension: "jpg" }),
     avatarWebp: user.displayAvatarURL({ extension: "webp" }),
     avatarGif: user.displayAvatarURL({ extension: "gif" }),
@@ -143,6 +143,8 @@ async function processMessage(
 Processing [${user.username}](${userProfilePhoto})... ${
     addonMessage ? `${addonMessage}...` : ""
   }`);
+
+  // TODO add my "...1s, 2s" update message a la /glif command
 
   let imageUrl;
   try {
