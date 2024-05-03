@@ -151,7 +151,7 @@ Processing [${user.username}](${userProfilePhoto})... ${
     imageUrl = await runGlif(glif.id, user.username, userProfilePhoto);
   } catch (e) {
     console.error("runGlif error", e);
-    await processingMessage.edit("Error processing image, sorry :(");
+    await processingMessage.edit(`Error processing image :(: ${e?.message ?? "unknown error idk"}`);
     return;
   }
 
