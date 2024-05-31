@@ -75,6 +75,14 @@ const glifUrls = [
     "80s Fantasy Figure of Yourself",
     "https://glif.app/@fab1an/glifs/clqnsn20x0030qbm790rm3kc4",
   ],
+  [
+    "King Charles Yourself",
+    "https://glif.app/@fab1an/glifs/clw9abuvy00038s8krkxr6ixk",
+  ],
+  [
+    "Potato Jesus Yourself",
+    "https://glif.app/@Heather/glifs/clw9sm11r0000tvp100lytxde",
+  ],
 ];
 
 export const glifs = glifUrls.map(([name, url]) => {
