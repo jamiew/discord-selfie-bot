@@ -81,7 +81,7 @@ const glifUrls = [
   ],
 
   //all below use text input (for glifmoji), not image URL
-  // TODO remix them and swithc to iam image input if possible!
+  // TODO remix them and swithc to an image input if possible!
   // [
   //   "GymFakes",
   //   "https://glif.app/@fab1an/glifs/clmfyd5r60004kx0flw80eeoa",

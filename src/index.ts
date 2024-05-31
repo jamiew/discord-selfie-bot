@@ -111,9 +111,16 @@ async function processMessage(
     user: user.username,
     avatar: user.displayAvatarURL(),
     avatarPng: user.displayAvatarURL({ extension: "png" }),
-    avatarPng2: user.displayAvatarURL({ extension: "png", format: "png", }),
-    avatarPng3: user.displayAvatarURL({ extension: "png", format: "png", size: 512, }),
-    avatarPng4: user.displayAvatarURL({ extension: "png", format: "png", size: 512, dynamic: false, static: true }),
+    avatarPng2: user.displayAvatarURL({ extension: "png" }),
+    avatarPng3: user.displayAvatarURL({
+      extension: "png",
+      size: 512,
+    }),
+    avatarPng4: user.displayAvatarURL({
+      extension: "png",
+      size: 512,
+      forceStatic: true,
+    }),
     avatarJpg: user.displayAvatarURL({ extension: "jpg" }),
     avatarWebp: user.displayAvatarURL({ extension: "webp" }),
     avatarGif: user.displayAvatarURL({ extension: "gif" }),
@@ -149,9 +156,11 @@ Processing [${user.username}](${userProfilePhoto})... ${
   let imageUrl;
   try {
     imageUrl = await runGlif(glif.id, user.username, userProfilePhoto);
-  } catch (e) {
+  } catch (e: any) {
     console.error("runGlif error", e);
-    await processingMessage.edit(`Error processing image :(: ${e?.message ?? "unknown error idk"}`);
+    await processingMessage.edit(
+      `Error processing image :(: ${e?.message ?? "unknown error idk"}`
+    );
     return;
   }
 
