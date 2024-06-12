@@ -122,13 +122,16 @@ async function processMessage(
       forceStatic: true,
     }),
     avatarJpg: user.displayAvatarURL({ extension: "jpg" }),
+    avatarJpgStatic: user.displayAvatarURL({ extension: "jpg", forceStatic: true }),
     avatarWebp: user.displayAvatarURL({ extension: "webp" }),
     avatarGif: user.displayAvatarURL({ extension: "gif" }),
   });
+
   const userProfilePhoto = user.displayAvatarURL({
-    extension: "jpg",
-    size: 1024,
-  });
+    extension: "png",
+    size: 512,
+    forceStatic: true,
+  })
 
   const addonMessages = [
     "you look nice today btw",
