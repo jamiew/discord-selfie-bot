@@ -43,6 +43,7 @@ export const runGlif = async (
 };
 
 const glifUrls = [
+/*
   [
     "Instant 90s Yearbook Yourself",
     "https://glif.app/@fab1an/glifs/clrg8yj3w0002ew574bno9ull",
@@ -78,6 +79,11 @@ const glifUrls = [
   [
     "Statue-fy Anyone",
     "https://glif.app/@Ell3n/glifs/clt9vzip900005tzi4gfzujm5",
+  ],
+*/
+  [
+    "MS Paint Anything",
+    "https://glif.app/@fab1an/glifs/clxa7m2f80004lkozza8ralld",
   ],
 
   //all below use text input (for glifmoji), not image URL
