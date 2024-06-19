@@ -45,68 +45,68 @@ export const runGlif = async (
 const glifUrls = [
   /*
   [
-    "Instant 90s Yearbook Yourself by @fab1an",
+    "Instant 90s Yearbook Yourself",
     "https://glif.app/@fab1an/glifs/clrg8yj3w0002ew574bno9ull",
   ],
   [
-    "Santa Anime Yourself by @fab1an",
+    "Santa Anime Yourself",
     "https://glif.app/@fab1an/glifs/clqdnkyd0001egy4wew187mbg",
   ],
   [
-    "Enhanced Twitter PFPs by @fab1an",
+    "Enhanced Twitter PFPs",
     "https://glif.app/@fab1an/glifs/clq2iyfnn001ddwfuxp2kuqs6",
   ],
   [
-    "RoastGPT: Roast Your Selfie by @fab1an",
+    "RoastGPT: Roast Your Selfie",
     "https://glif.app/@fab1an/glifs/clo5gzr31000kmj0f2xeqjb25",
   ],
   [
-    "80s Fantasy Figure of Yourself by @fab1an",
+    "80s Fantasy Figure of Yourself",
     "https://glif.app/@fab1an/glifs/clqnsn20x0030qbm790rm3kc4",
   ],
   [
-    "King Charles Yourself by @fab1an",
+    "King Charles Yourself",
     "https://glif.app/@fab1an/glifs/clw9abuvy00038s8krkxr6ixk",
   ],
   [
-    "Potato Jesus Yourself by @Heather",
+    "Potato Jesus Yourself",
     "https://glif.app/@Heather/glifs/clw9sm11r0000tvp100lytxde",
   ],
   [
-    "GlifStation 1 Covert Art by @fab1an",
+    "GlifStation 1 Covert Art",
     "https://glif.app/@fab1an/glifs/clue1e2z50000ysvqtnet2ywx",
   ],
   [
-    "Statue-fy Anyone by @Ell3n",
+    "Statue-fy Anyone",
     "https://glif.app/@Ell3n/glifs/clt9vzip900005tzi4gfzujm5",
   ],
   [
-    "MS Paint Anything by @fab1an",
+    "MS Paint Anything",
     "https://glif.app/@fab1an/glifs/clxa7m2f80004lkozza8ralld",
   ],
 */
   [
-    "Point Illustration Portraits by @araminta",
+    "Point Illustration Portraits",
     "https://glif.app/@araminta_k/glifs/clxj28k0l0001l72s3u83ycx2",
   ],
   [
-    "Soft Focus Illustration Portraits by @araminta",
+    "Soft Focus Illustration Portraits",
     "https://glif.app/@araminta_k/glifs/clxj4s7go0000tzb9x720qbo5",
   ],
   [
-    "My Pet Monster by @araminta",
+    "My Pet Monster",
     "https://glif.app/@araminta_k/glifs/clxjekytz0001pt59ikrr7nqc",
   ],
   [
-    "Digital Cartoon Portraits & Scenes by @araminta",
+    "Digital Cartoon Portraits & Scenes",
     "https://glif.app/@araminta_k/glifs/clxk3vzqe0000j8n33cjs83gy",
   ],
   [
-    "Anime Repaint by @araminta",
+    "Anime Repaint",
     "https://glif.app/@araminta_k/glifs/clxkk2nrk0000aq4x4kqz89xq",
   ],
   [
-    "Manga Repaint by @araminta",
+    "Manga Repaint",
     "https://glif.app/@araminta_k/glifs/clxkkk22z0000hd4u32m5aw8n",
   ],
 
