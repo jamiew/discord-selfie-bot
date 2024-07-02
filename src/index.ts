@@ -105,33 +105,11 @@ async function processMessage(
   const glif = await glifOfTheDay();
   // console.log("processMessage glif =>", glif);
 
-  // discord seems to be largely capped around 358x358
-  // converting to jpg since some people have gif avatars that break glif, and discord won't convert gif to png
-  console.log("displayAvatarURL debugging", {
-    user: user.username,
-    avatar: user.displayAvatarURL(),
-    avatarPng: user.displayAvatarURL({ extension: "png" }),
-    avatarPng2: user.displayAvatarURL({ extension: "png" }),
-    avatarPng3: user.displayAvatarURL({
-      extension: "png",
-      size: 512,
-    }),
-    avatarPng4: user.displayAvatarURL({
-      extension: "png",
-      size: 512,
-      forceStatic: true,
-    }),
-    avatarJpg: user.displayAvatarURL({ extension: "jpg" }),
-    avatarJpgStatic: user.displayAvatarURL({ extension: "jpg", forceStatic: true }),
-    avatarWebp: user.displayAvatarURL({ extension: "webp" }),
-    avatarGif: user.displayAvatarURL({ extension: "gif" }),
-  });
-
   const userProfilePhoto = user.displayAvatarURL({
     extension: "png",
     size: 512,
     forceStatic: true,
-  })
+  });
 
   const addonMessages = [
     "you look nice today btw",
@@ -174,7 +152,7 @@ Processing [${user.username}](${userProfilePhoto})... ${
   //   .setTimestamp();
 
   await message.channel.send({
-    content: `<@${user.id}> run through [${glif.name}](<${glif.url}>)`,
+    content: `<@${user.id}> run through [${glif.name}](<${glif.url}>) by [@${glif.username}](<${glif.userUrl}>)`,
     // embeds: [generatedImageEmbed],
     // @ts-ignore FIXME this works, but tsc doesn't like it
     files: [imageUrl],
