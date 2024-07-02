@@ -43,7 +43,6 @@ export const runGlif = async (
 };
 
 const glifUrls = [
-  /*
   [
     "Instant 90s Yearbook Yourself",
     "https://glif.app/@fab1an/glifs/clrg8yj3w0002ew574bno9ull",
@@ -84,7 +83,6 @@ const glifUrls = [
     "MS Paint Anything",
     "https://glif.app/@fab1an/glifs/clxa7m2f80004lkozza8ralld",
   ],
-*/
   [
     "Point Illustration Portraits",
     "https://glif.app/@araminta_k/glifs/clxj28k0l0001l72s3u83ycx2",
